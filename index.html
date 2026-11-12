@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farad Mohammed Sarkhaji</title>
+  <meta name="description"
+    content="Portfolio of Farad Mohammed Sarkhaji - Software Engineer and Data Science practitioner specializing in Machine Learning, full-stack systems, and practical AI solutions.">
+
+  <!-- Color Scheme Meta & FOUC Prevention Script -->
+  <meta name="color-scheme" content="light">
+  <script>
+    try {
+      const storedScheme = localStorage.getItem("portfolio-theme");
+      if (storedScheme === "dark" || storedScheme === "light") {
+        document.documentElement.setAttribute("data-theme", storedScheme);
+        document.querySelector('meta[name="color-scheme"]').content = storedScheme;
+      }
+    } catch (e) { }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SITE HEADER / NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="#home" class="brand-logo" id="brand-logo">
+        <span>Farad Mohammed Sarkhaji</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#recognition" class="nav-link">Recognition</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="hero-backdrop-graphic"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">HELLO, I'M</p>
+        <h1 class="hero-title">Farad Mohammed Sarkhaji</h1>
+        <p class="hero-subtitle">AI Engineer & Data Scientist</p>
+        <p class="hero-bio">
+          BE IT and Honours Data Science graduate from Padre Conceicao College of Engineering, building practical AI,
+          analytics, data engineering, and full-stack products that turn complex problems into useful, production-minded
+          solutions.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-pill-primary" id="btn-view-resume"
+            href="https://drive.google.com/file/d/18RV0W8xv9HWtyGMgacAWk3KpKp52QQfh/view?usp=drive_link"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fa-regular fa-file-lines" style="margin-right: 8px;"></i> View Resume
+          </a>
+          <a href="#projects" class="btn-pill-secondary">
+            See My Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Scroll Indicator -->
+    <a href="#about" class="floating-scroll-down" aria-label="Scroll to About Me section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <div class="about-photo-frame">
+            <img src="profile.jpg" alt="Farad Mohammed Sarkhaji Profile Photo" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-content-col">
+          <div class="about-text">
+            <p>
+              I am a software engineer and data science aspirant currently pursuing a Bachelor of Engineering in
+              Information Technology with an Honours in Data Science from Padre Conceicao College of Engineering. My
+              work sits at the intersection of software development, data analysis, and machine learning: building
+              reliable applications, exploring predictive models, and turning raw data into actionable insights.
+              Alongside my coursework, I focus on applying these skills through practical academic projects, developing
+              end-to-end web applications, data processing pipelines, and analytical dashboards. I am interested in
+              roles across software engineering, data science, AI/ML engineering, analytics, and data engineering,
+              especially where I can build impactful products that connect strong engineering fundamentals with
+              data-driven decision-making.
+            </p>
+          </div>
+
+          <div class="about-tags">
+            <span class="tag-pill">Machine learning optimisation</span>
+            <span class="tag-pill">Big data processing</span>
+            <span class="tag-pill">AI feasibility modelling</span>
+            <span class="tag-pill">MLOps and deployment</span>
+            <span class="tag-pill">Real-world data products</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="education-section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">ACADEMIC BACKGROUND</p>
+        <h2 class="section-title">Education</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="education-watermark">2028</div>
+          <div class="education-header">
+            <div class="edu-icon-badge">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="edu-institution-info">
+              <h3>Padre Conceição College of Engineering (PCCE)</h3>
+              <p class="edu-degree">Honours in Data Science</p>
+            </div>
+          </div>
+          <div class="edu-meta-row">
+            <span class="edu-meta-item"><i class="fa-regular fa-calendar"></i> June 2025 – May 2028</span>
+            <span class="edu-meta-item"><i class="fa-solid fa-location-dot"></i> Verna, Goa, India</span>
+          </div>
+          <div class="edu-tags">
+            <span class="edu-tag">Machine Learning</span>
+            <span class="edu-tag">Deep Learning</span>
+            <span class="edu-tag">Data Visualization</span>
+            <span class="edu-tag">Statistical Modeling</span>
+            <span class="edu-tag">Data Mining</span>
+            <span class="edu-tag">Big Data Analytics</span>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="education-watermark">2028</div>
+          <div class="education-header">
+            <div class="edu-icon-badge">
+              <i class="fa-solid fa-university"></i>
+            </div>
+            <div class="edu-institution-info">
+              <h3>Padre Conceição College of Engineering (PCCE)</h3>
+              <p class="edu-degree">Information Technology</p>
+            </div>
+          </div>
+          <div class="edu-meta-row">
+            <span class="edu-meta-item"><i class="fa-regular fa-calendar"></i> June 2024 – May 2028</span>
+            <span class="edu-meta-item"><i class="fa-solid fa-location-dot"></i> Verna, Goa, India</span>
+            <span class="edu-grade-badge">CGPA: 8.2/10</span>
+          </div>
+          <div class="edu-tags">
+            <span class="edu-tag">Data Structures and Algorithms</span>
+            <span class="edu-tag">Database Management Systems</span>
+            <span class="edu-tag">Computer Networks</span>
+            <span class="edu-tag">Operating Systems</span>
+            <span class="edu-tag">Artificial Intelligence</span>
+            <span class="edu-tag">Software Engineering</span>
+            <span class="edu-tag">Object-Oriented Programming</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">MY JOURNEY</p>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-top-badge">
+            <span class="role-category">ARTIFICIAL INTELLIGENCE INTERN</span>
+            <span class="work-type-badge">Remote</span>
+          </div>
+          <h3>Artificial Intelligence Intern</h3>
+          <p class="experience-company">
+            <a href="https://lenovo.com" target="_blank" rel="noopener noreferrer">Lenovo</a>
+          </p>
+          <div class="experience-meta">
+            <span><i class="fa-regular fa-calendar"></i> July 2025 – August 2025</span>
+          </div>
+          <p class="experience-desc">
+            Designed and built an interactive AI chatbot. Handled messy user inputs, conversation history management,
+            and fallback error handling.
+          </p>
+          <div class="experience-footer">
+            <div class="experience-tech-pills">
+              <span class="tag-pill">Artificial Intelligence</span>
+              <span class="tag-pill">Chatbot</span>
+              <span class="tag-pill">Error Handling</span>
+            </div>
+            <a href="https://lenovo.com" target="_blank" rel="noopener noreferrer" class="btn-visit-company">
+              Visit Lenovo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-top-badge">
+            <span class="role-category">BUSINESS DEVELOPMENT SPECIALIST INTERN</span>
+            <span class="work-type-badge">Remote</span>
+          </div>
+          <h3>Business Development Specialist Intern</h3>
+          <p class="experience-company">
+            <a href="https://learn.younity.in/" target="_blank" rel="noopener noreferrer">Younity.in</a>
+          </p>
+          <div class="experience-meta">
+            <span><i class="fa-regular fa-calendar"></i> July 2023 – September 2023</span>
+          </div>
+          <p class="experience-desc">
+            Conducted SWOT analysis, researched industry trends, and evaluated competitor movements. Identified,
+            qualified, and reached out to prospective B2C clients through networking and direct outreach.
+          </p>
+          <div class="experience-footer">
+            <div class="experience-tech-pills">
+              <span class="tag-pill">Market Research</span>
+              <span class="tag-pill">SWOT Analysis</span>
+              <span class="tag-pill">Lead Generation</span>
+            </div>
+            <a href="https://learn.younity.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-company">
+              Visit Younity <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DO SECTION -->
+  <section class="what-i-do-section" id="what-i-do">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">WHAT I OFFER</p>
+        <h2 class="section-title">What I Do</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <div class="what-i-do-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3>Data Science & Machine Learning</h3>
+          <p>
+            I clean, explore, model, and evaluate data using Python, R, SQL, pandas, scikit-learn, statistical learning,
+            NLP, and transformer workflows, with deep attention to model quality, bias, and interpretability.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3>Analytics & Business Intelligence</h3>
+          <p>
+            I turn messy datasets into clear insights through EDA, feature engineering, SQL analysis, Tableau and Power
+            BI dashboards, and concise summaries that support technical and business decisions.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>Full-Stack Web Development</h3>
+          <p>
+            I architect and build accessible, responsive web applications with TypeScript, React, Next.js, modern CSS,
+            and backend microservices with FastAPI and Node.js, delivering high-performance end-to-end digital
+            solutions.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3>Data Engineering & Pipelines</h3>
+          <p>
+            I design reliable automated data ingestion and preprocessing workflows with PySpark, Docker, PostgreSQL, and
+            vector stores (FAISS, Qdrant) that support enterprise ML training and real-time inference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK SECTION -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">TOOLS & TECHNOLOGIES</p>
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills with Item Counts -->
+      <div class="tech-filter-bar">
+        <button class="filter-btn active" data-category="all">
+          All <span class="count-badge" id="count-all">25</span>
+        </button>
+        <button class="filter-btn" data-category="datascience">
+          Data Science <span class="count-badge" id="count-ds">5</span>
+        </button>
+        <button class="filter-btn" data-category="frameworks">
+          Frameworks <span class="count-badge" id="count-frameworks">3</span>
+        </button>
+        <button class="filter-btn" data-category="tools">
+          Tools & Platforms <span class="count-badge" id="count-tools">12</span>
+        </button>
+        <button class="filter-btn" data-category="programming">
+          Programming <span class="count-badge" id="count-prog">5</span>
+        </button>
+      </div>
+
+      <!-- Tech Cards Grid -->
+      <div class="tech-grid" id="tech-grid">
+        <div class="tech-card" data-category="programming">
+          <div class="tech-card-icon" style="color: #3776ab;"><i class="fa-brands fa-python fa-2x"></i></div>
+          <span class="tech-card-name">Python</span>
+        </div>
+        <div class="tech-card" data-category="datascience">
+          <div class="tech-card-icon" style="color: #150458;"><i class="fa-solid fa-table-columns fa-2x"></i></div>
+          <span class="tech-card-name">Pandas</span>
+        </div>
+        <div class="tech-card" data-category="datascience">
+          <div class="tech-card-icon" style="color: #013243;"><i class="fa-solid fa-cube fa-2x"></i></div>
+          <span class="tech-card-name">NumPy</span>
+        </div>
+        <div class="tech-card" data-category="datascience">
+          <div class="tech-card-icon" style="color: #f7931e;"><i class="fa-solid fa-gears fa-2x"></i></div>
+          <span class="tech-card-name">scikit-learn</span>
+        </div>
+        <div class="tech-card" data-category="datascience">
+          <div class="tech-card-icon" style="color: #11557c;"><i class="fa-solid fa-chart-line fa-2x"></i></div>
+          <span class="tech-card-name">Matplotlib</span>
+        </div>
+        <div class="tech-card" data-category="frameworks">
+          <div class="tech-card-icon" style="color: #61dafb;"><i class="fa-brands fa-react fa-2x"></i></div>
+          <span class="tech-card-name">React</span>
+        </div>
+        <div class="tech-card" data-category="frameworks">
+          <div class="tech-card-icon" style="color: #009688;"><i class="fa-solid fa-bolt-lightning fa-2x"></i></div>
+          <span class="tech-card-name">FastAPI</span>
+        </div>
+        <div class="tech-card" data-category="frameworks">
+          <div class="tech-card-icon" style="color: #3776ab;"><i class="fa-solid fa-flask fa-2x"></i></div>
+          <span class="tech-card-name">Flask</span>
+        </div>
+        <div class="tech-card" data-category="programming">
+          <div class="tech-card-icon" style="color: #00758f;"><i class="fa-solid fa-database fa-2x"></i></div>
+          <span class="tech-card-name">SQL</span>
+        </div>
+        <div class="tech-card" data-category="programming">
+          <div class="tech-card-icon" style="color: #5382a1;"><i class="fa-brands fa-java fa-2x"></i></div>
+          <span class="tech-card-name">Java</span>
+        </div>
+        <div class="tech-card" data-category="programming">
+          <div class="tech-card-icon" style="color: #00599c;"><i class="fa-solid fa-code fa-2x"></i></div>
+          <span class="tech-card-name">C++</span>
+        </div>
+        <div class="tech-card" data-category="programming">
+          <div class="tech-card-icon" style="color: #659ad2;"><i class="fa-solid fa-code fa-2x"></i></div>
+          <span class="tech-card-name">C</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #336791;"><i class="fa-solid fa-database fa-2x"></i></div>
+          <span class="tech-card-name">SQLite</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #3776ab;"><i class="fa-solid fa-car-side fa-2x"></i></div>
+          <span class="tech-card-name">VirtualCAN</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #3776ab;"><i class="fa-solid fa-code-branch fa-2x"></i></div>
+          <span class="tech-card-name">Python-CAN</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #3776ab;"><i class="fa-solid fa-laptop-code fa-2x"></i></div>
+          <span class="tech-card-name">PyCharm</span>
+        </div>
+        <div class="tech-card" data-category="datascience">
+          <div class="tech-card-icon" style="color: #f37726;"><i class="fa-solid fa-book-open fa-2x"></i></div>
+          <span class="tech-card-name">Jupyter Notebook</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #007acc;"><i class="fa-solid fa-code fa-2x"></i></div>
+          <span class="tech-card-name">Visual Studio Code</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #6c63ff;"><i class="fa-solid fa-laptop-code fa-2x"></i></div>
+          <span class="tech-card-name">AntiGravity</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #009688;"><i class="fa-solid fa-layer-group fa-2x"></i></div>
+          <span class="tech-card-name">Multithreading</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #5e8e3e;"><i class="fa-solid fa-map-location-dot fa-2x"></i></div>
+          <span class="tech-card-name">OpenStreetMap</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #4285f4;"><i class="fa-brands fa-google fa-2x"></i></div>
+          <span class="tech-card-name">Google Cloud Platform</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #e25a1c;"><i class="fa-solid fa-bolt fa-2x"></i></div>
+          <span class="tech-card-name">Apache Spark</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #0078d4;"><i class="fa-solid fa-layer-group fa-2x"></i></div>
+          <span class="tech-card-name">Microsoft Fabric</span>
+        </div>
+        <div class="tech-card" data-category="tools">
+          <div class="tech-card-icon" style="color: #00758f;"><i class="fa-solid fa-database fa-2x"></i></div>
+          <span class="tech-card-name">TQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">WHAT I'VE BUILT</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <!-- Project Filter Pills -->
+      <div class="projects-filter-bar">
+        <button class="project-filter-btn active" data-project-filter="all">All</button>
+        <button class="project-filter-btn" data-project-filter="datascience">Data Science</button>
+        <button class="project-filter-btn" data-project-filter="webdev">Web Development</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project 7: Norton D'Silva Video Editor Portfolio -->
+        <div class="project-card" data-category="webdev" data-id="p7">
+          <div class="project-media-wrapper" aria-hidden="true">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: radial-gradient(circle at 50% 45%, #a84316, #16100f 72%); color: #fff; text-align: center;">
+              <span style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; color: #ffb27b;">CREATIVE PORTFOLIO</span>
+              <strong style="font-size: 1.8rem; line-height: 0.95; letter-spacing: 0.04em;">NORTON<br>D'SILVA</strong>
+              <span style="font-size: 0.7rem; letter-spacing: 0.12em;">VIDEO EDITOR · DIRECTOR</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-top">
+              <span class="project-category-badge">WEB DEVELOPMENT</span>
+              <span class="project-icon-badge"><i class="fa-solid fa-clapperboard"></i></span>
+            </div>
+            <h3 class="project-title">Norton D'Silva — Video Editor & Director Portfolio</h3>
+            <p class="project-desc">
+              Created a cinematic freelance portfolio showcasing video direction, editing, client work, testimonials,
+              and contact details. Its signature interaction is a scroll-driven, 240-frame WebP animation rendered
+              on canvas.
+            </p>
+            <div class="project-tags">
+              <span class="tag-pill">HTML</span>
+              <span class="tag-pill">CSS</span>
+              <span class="tag-pill">JavaScript</span>
+              <span class="tag-pill">Canvas</span>
+              <span class="tag-pill">WebP Animation</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://notdsilva.github.io/portfolio/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-link">
+                Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/notdsilva/portfolio" target="_blank" rel="noopener noreferrer"
+                class="btn-project-link">
+                Source Code <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Raasta Accessible Navigation -->
+        <div class="project-card" data-category="webdev" data-id="p8">
+          <div class="project-media-wrapper" aria-hidden="true">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: radial-gradient(circle at 50% 45%, #155e75, #071522 72%); color: #fff; text-align: center;">
+              <i class="fa-solid fa-wheelchair" style="font-size: 2rem; color: #67e8f9;"></i>
+              <strong style="font-size: 1.6rem; letter-spacing: 0.18em;">RAASTA</strong>
+              <span style="font-size: 0.7rem; letter-spacing: 0.1em;">ACCESSIBLE NAVIGATION</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-top">
+              <span class="project-category-badge">WEB DEVELOPMENT</span>
+              <span class="project-icon-badge"><i class="fa-solid fa-wheelchair"></i></span>
+            </div>
+            <h3 class="project-title">Raasta — Accessibility-Aware Navigation</h3>
+            <p class="project-desc">
+              Contributed as part of the development team to an accessible navigation app for wheelchair and Deaf
+              users. Developed frontend features and helped connect the frontend to backend services for map-based
+              navigation and accessibility information.
+            </p>
+            <div class="project-tags">
+              <span class="tag-pill">Frontend Development</span>
+              <span class="tag-pill">API Integration</span>
+              <span class="tag-pill">Accessible Design</span>
+              <span class="tag-pill">Navigation</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://raasta.pages.dev/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-link">
+                Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: E-commerce Sales Analytics -->
+        <div class="project-card" data-category="datascience" data-id="p9">
+          <div class="project-media-wrapper" aria-hidden="true">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: radial-gradient(circle at 50% 45%, #166534, #07150f 72%); color: #fff; text-align: center;">
+              <i class="fa-solid fa-chart-column" style="font-size: 2rem; color: #86efac;"></i>
+              <strong style="font-size: 1.4rem; letter-spacing: 0.1em;">SALES ANALYTICS</strong>
+              <span style="font-size: 0.7rem; letter-spacing: 0.1em;">REVENUE · CUSTOMERS · RFM</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-top">
+              <span class="project-category-badge">DATA SCIENCE</span>
+              <span class="project-icon-badge"><i class="fa-solid fa-chart-line"></i></span>
+            </div>
+            <h3 class="project-title">E-commerce Sales Analytics</h3>
+            <p class="project-desc">
+              Analysed retail transactions to uncover sales trends and customer behaviour. November 2011 had the
+              highest monthly revenue at £1.51M; RFM segmentation found that Champions generated 64.63% of
+              identified-customer revenue.
+            </p>
+            <div class="project-tags">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Pandas</span>
+              <span class="tag-pill">NumPy</span>
+              <span class="tag-pill">Matplotlib</span>
+              <span class="tag-pill">SQL</span>
+              <span class="tag-pill">RFM Segmentation</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/fahadsirkazi2006/AI-Engineer-Roadmap/tree/main/01-data-analysis/02-ecommerce-sales-analysis"
+                target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                View Project <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: Mandi House Restaurant Website -->
+        <div class="project-card" data-category="webdev" data-id="p10">
+          <div class="project-media-wrapper" aria-hidden="true">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: radial-gradient(circle at 50% 45%, #9a4e1f, #24140d 72%); color: #fff; text-align: center;">
+              <i class="fa-solid fa-utensils" style="font-size: 2rem; color: #ffd28a;"></i>
+              <strong style="font-size: 1.5rem; letter-spacing: 0.1em;">MANDI HOUSE</strong>
+              <span style="font-size: 0.7rem; letter-spacing: 0.1em;">ARABIAN CUISINE · VASCO, GOA</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-top">
+              <span class="project-category-badge">WEB DEVELOPMENT</span>
+              <span class="project-icon-badge"><i class="fa-solid fa-utensils"></i></span>
+            </div>
+            <h3 class="project-title">Mandi House Restaurant Website</h3>
+            <p class="project-desc">
+              Built a demo website for Mandi House, a mandi restaurant in Vasco, Goa. The site presents the restaurant's
+              story, Arabian food and drinks menu, gallery, customer reviews, and an online ordering experience.
+            </p>
+            <div class="project-tags">
+              <span class="tag-pill">Restaurant Website</span>
+              <span class="tag-pill">Menu & Gallery</span>
+              <span class="tag-pill">Online Ordering</span>
+              <span class="tag-pill">Responsive Design</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://fahadsirkazi2006.github.io/mandiHouse/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-link">
+                Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination & GitHub Button -->
+      <div class="projects-bottom-controls">
+        <div class="pagination-bar">
+          <button class="page-btn" type="button" data-page-direction="prev" aria-label="Previous page">&lt;</button>
+          <button class="page-btn active" type="button" data-page-index="1">1</button>
+          <button class="page-btn" type="button" data-page-index="2">2</button>
+          <button class="page-btn" type="button" data-page-direction="next" aria-label="Next page">&gt;</button>
+        </div>
+
+        <a href="https://github.com/fahadsirkazi2006" target="_blank" rel="noopener noreferrer" class="btn-more-github">
+          More Projects on GitHub <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS & ACHIEVEMENTS SECTION -->
+  <section class="recognition-section" id="recognition">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">RECOGNITION</p>
+        <h2 class="section-title">Certifications and Achievements</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-solid fa-award"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Sep 2024</span>
+            <h4>Certificate of Exceptional Hire</h4>
+            <p class="award-institution">Younity.in</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Recognised by Younity.in as an exceptional hire for strong performance, dedication, and diligence
+              in carrying out role responsibilities.
+            </p>
+            <a href="https://drive.google.com/file/d/1eQG8Ro_ET2msc9ljyERpWmGjCWqNV1Yr/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer" class="btn-project-link">
+              View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-brands fa-microsoft"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Microsoft Learn</span>
+            <h4>Ingest Data with Dataflows Gen2 in Microsoft Fabric</h4>
+            <p class="award-institution">Microsoft</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Earned a Microsoft Learn achievement for learning how to ingest and prepare data with Dataflows Gen2
+              in Microsoft Fabric, building practical skills for data integration in the Fabric analytics platform.
+            </p>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/faradmohammedsarkhaji-6405/9A9X6C2U?sharingId=617D5CF969B8C09F"
+              target="_blank" rel="noopener noreferrer" class="btn-project-link">
+              View Achievement <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-brands fa-microsoft"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Microsoft Learn</span>
+            <h4>Orchestrate Processes and Data Movement with Microsoft Fabric</h4>
+            <p class="award-institution">Microsoft</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Earned a Microsoft Learn achievement for developing skills in orchestrating data workflows and
+              coordinating data movement with Microsoft Fabric, including the use of data pipelines.
+            </p>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/faradmohammedsarkhaji-6405/2T2JY8HV?sharingId=617D5CF969B8C09F"
+              target="_blank" rel="noopener noreferrer" class="btn-project-link">
+              View Achievement <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-brands fa-microsoft"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Microsoft Learn</span>
+            <h4>Work with Real-Time Data in an Eventhouse in Microsoft Fabric</h4>
+            <p class="award-institution">Microsoft</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Earned a Microsoft Learn achievement focused on working with real-time data in Microsoft Fabric
+              Eventhouse, including foundational concepts for analyzing streaming data.
+            </p>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/faradmohammedsarkhaji-6405/3Z3EW68H?sharingId=617D5CF969B8C09F"
+              target="_blank" rel="noopener noreferrer" class="btn-project-link">
+              View Achievement <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-brands fa-google"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Intermediate Skill Badge</span>
+            <h4>Explore Generative AI with the Vertex AI Gemini API</h4>
+            <p class="award-institution">Google Cloud · Machine Learning &amp; AI</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Recognised for exploring generative AI with the Vertex AI Gemini API. This intermediate skill badge
+              highlights practical learning in applying Google's Gemini models to generative AI workflows.
+            </p>
+            <a href="https://www.credly.com/badges/e2298a3a-9ca3-4c19-9dae-9fc312d5964a/linked_in_profile"
+              target="_blank" rel="noopener noreferrer" class="btn-project-link">
+              View Badge <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-badge-col">
+            <div class="award-medal-circle">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div class="award-star-chip"><i class="fa-solid fa-star"></i></div>
+            </div>
+            <span class="award-date-pill">Oct 2025</span>
+            <h4>Ethical Hacking</h4>
+            <p class="award-institution">NPTEL Online Certification</p>
+          </div>
+          <div class="award-desc-col">
+            <p>
+              Completed NPTEL's Ethical Hacking course, building foundational knowledge of ethical hacking
+              concepts and cybersecurity practices.
+            </p>
+            <a href="assets/certificates/nptel-ethical-hacking.pdf" target="_blank" rel="noopener noreferrer"
+              class="btn-project-link">
+              View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENTS / TESTIMONIALS SECTION -->
+  <section class="comments-section" id="comments">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">FEEDBACK</p>
+        <h2 class="section-title">Comments</h2>
+        <div class="section-underline">
+          <span class="bar-primary"></span>
+          <span class="bar-secondary"></span>
+        </div>
+      </div>
+
+      <!-- Feedback Banner Card -->
+      <div class="feedback-banner-card">
+        <div class="feedback-banner-text">
+          <h3>Notes from people I have worked with</h3>
+          <p>Public feedback and professional endorsements.</p>
+        </div>
+        <button class="btn-leave-feedback" id="btn-open-feedback">
+          Leave Feedback
+        </button>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="comments-grid" id="comments-container">
+        <!-- Card 1 -->
+        <div class="comment-card">
+          <p class="comment-quote-text" id="quote-1">
+            "I had the opportunity to work with Farad on a Generative AI telecom chatbot project, which was selected as
+            one of the top projects among 2000+ teams. His grasp of backend architecture and machine learning pipelines
+            is exceptional."
+          </p>
+          <button class="btn-read-more" onclick="toggleReadMore(this, 'quote-1')">Read more</button>
+          <div class="comment-author-info">
+            <div class="author-avatar">R</div>
+            <div class="author-details">
+              <h4>Rahul Sharma</h4>
+              <p>Lead AI Engineer, Tech Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="comment-card">
+          <p class="comment-quote-text" id="quote-2">
+            "A very talented and professional individual with a deep knack for development. Farad worked under me across
+            3 open source initiatives and consistently stood out as one of the best performers with clean, elegant
+            code."
+          </p>
+          <button class="btn-read-more" onclick="toggleReadMore(this, 'quote-2')">Read more</button>
+          <div class="comment-author-info">
+            <div class="author-avatar">P</div>
+            <div class="author-details">
+              <h4>Priya Patel</h4>
+              <p>Engineering Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CONTACT ME SECTION -->
+  <footer class="footer-contact-wrapper" id="contact">
+    <div class="container">
+      <div class="footer-contact-grid">
+        <!-- Left Column: Bio & Quick Links -->
+        <div class="footer-left-col">
+          <h2>Farad Mohammed Sarkhaji</h2>
+          <p class="footer-bio">
+            Software engineer and honours Data Science Student At Padre Conceicao college of engineering  building AI, analytics, data
+            engineering, backend, and full-stack solutions.
+          </p>
+
+          <div class="footer-links-row">
+            <div class="footer-links-group">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recognition">Research</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-links-group">
+              <h4>Connect</h4>
+              <div class="footer-social-icons">
+                <a href="https://www.linkedin.com/in/farad-sarkhaji" target="_blank" rel="noopener noreferrer" class="social-circle-btn"
+                  aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/fahadsirkazi2006" target="_blank" rel="noopener noreferrer"
+                  class="social-circle-btn" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:fahadsirkazi109@gmail.com" class="social-circle-btn" aria-label="Email Farad">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+              <p class="contact-email-text">fahadsirkazi109@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Me Form -->
+        <div class="footer-right-col">
+          <div class="contact-card">
+            <h3>Contact Me</h3>
+            <p class="contact-card-sub">For roles, collaborations, or project discussions, send a direct message.</p>
+
+            <form class="contact-form" id="contact-form" action="https://formsubmit.co/fahadsirkazi109@gmail.com"
+              method="POST">
+              <input type="hidden" name="_subject" value="New portfolio contact message">
+              <div class="form-group">
+                <label for="name">NAME *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">EMAIL *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="you@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">MESSAGE *</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell me what you would like to discuss..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn-send-message" id="btn-submit-contact">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="visitor-game" aria-labelledby="visitor-game-title">
+        <div class="visitor-game-heading">
+          <h3 id="visitor-game-title">Take a Fun Break</h3>
+          <p>Catch as many stars as you can in 20 seconds!</p>
+        </div>
+        <div class="visitor-game-scores">
+          <p>Score <strong id="game-score">0</strong></p>
+          <p>Time <strong><span id="game-time">20</span>s</strong></p>
+          <p>Personal best <strong id="game-high-score">0</strong></p>
+        </div>
+        <div class="game-arena" id="game-arena" aria-label="Star catching game area">
+          <button class="game-target" id="game-target" type="button" aria-label="Catch the star" hidden>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="game-status" id="game-status" role="status" aria-live="polite">
+          Press Start Game, then catch the star before time runs out.
+        </p>
+        <button class="btn-send-message game-start-button" id="game-start" type="button">Start Game</button>
+      </section>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Farad Mohammed Sarkhaji. All rights reserved. Built with precision and modern web performance
+          standards.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING SCROLL TO TOP BUTTON -->
+  <button class="floating-scroll-top" id="scroll-to-top" aria-label="Scroll back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- RESUME MODAL -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="close-resume-modal" aria-label="Close resume">&times;</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 id="resume-title" style="font-size: 1.8rem; margin-bottom: 6px;">Farad Mohammed Sarkhaji</h2>
+        <p style="color: var(--accent-blue); font-weight: 600;">Data Analyst Candidate</p>
+        <p style="font-size: 0.9rem; color: var(--text-light);">
+          <a href="mailto:fahadsirkazi109@gmail.com">fahadsirkazi109@gmail.com</a>
+          &bull; <a href="tel:+918999638349">(+91) 8999638349</a> &bull; India
+        </p>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 8px;">Summary</h4>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+          Data Science student with a foundation in Python, SQL, statistical modeling, and data visualization.
+          Hands-on project experience analyzing retail transactions and building dashboards for real-time vehicle
+          telemetry. Seeking an entry-level Data Analyst opportunity.
+        </p>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 12px;">Technical Skills</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">SQL</span>
+          <span class="tag-pill">Java</span>
+          <span class="tag-pill">C++</span>
+          <span class="tag-pill">C</span>
+          <span class="tag-pill">SQLite</span>
+          <span class="tag-pill">Pandas</span>
+          <span class="tag-pill">NumPy</span>
+          <span class="tag-pill">scikit-learn</span>
+          <span class="tag-pill">Matplotlib</span>
+          <span class="tag-pill">Flask</span>
+          <span class="tag-pill">Jupyter Notebook</span>
+          <span class="tag-pill">VirtualCAN</span>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 12px;">Education</h4>
+        <div style="margin-bottom: 16px;">
+          <strong>Honours in Data Science</strong>
+          <p style="color: var(--text-muted); margin: 4px 0;">Padre Conceição College of Engineering (PCCE), Verna, Goa</p>
+          <p style="color: var(--text-light); font-size: 0.9rem;">June 2025 – May 2028</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Relevant coursework: Statistical Modeling, Data Visualization, Data Mining, Big Data Analytics, Machine Learning</p>
+        </div>
+        <div>
+          <strong>Information Technology</strong>
+          <p style="color: var(--text-muted); margin: 4px 0;">Padre Conceição College of Engineering (PCCE), Verna, Goa</p>
+          <p style="color: var(--text-light); font-size: 0.9rem;">June 2024 – May 2028 &bull; CGPA: 8.2/10</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Relevant coursework: Database Management Systems, Data Structures and Algorithms, Artificial Intelligence</p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 12px;">Projects</h4>
+        <div style="margin-bottom: 16px;">
+          <strong>E-commerce Sales Analysis</strong> <span style="color: var(--text-light);">| Python</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 6px;">
+            Analyzed retail transaction data to identify sales trends, high-value customers, and customer purchasing patterns.
+          </p>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <strong>Automotive Diagnostic &amp; Telemetry Simulator</strong>
+          <span style="color: var(--text-light);">| Python, Flask, VirtualCAN, Multithreading</span>
+          <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-left: 20px; margin-top: 6px;">
+            <li>Built a multithreaded simulator to process vehicle telemetry, including RPM, speed, and engine metrics, over a simulated CAN bus.</li>
+            <li>Implemented payload parsing and asynchronous routing for diagnostic requests.</li>
+            <li>Created a web dashboard to monitor vehicle states and diagnostic trouble codes in real time.</li>
+          </ul>
+        </div>
+        <div>
+          <strong>RAASTA – Accessible Navigation System</strong>
+          <span style="color: var(--text-light);">| React, Python, OpenStreetMap, FastAPI</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-top: 6px;">
+            Contributed to a navigation system that evaluates routes for physical accessibility barriers and calculates detours around hazards.
+          </p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 12px;">Experience</h4>
+        <div style="margin-bottom: 16px;">
+          <strong>Artificial Intelligence Intern</strong> <span style="color: var(--text-light);">| Lenovo, Remote</span>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin: 4px 0;">July 2025 – August 2025</p>
+          <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-left: 20px; margin-top: 6px;">
+            <li>Designed and built an interactive AI chatbot.</li>
+            <li>Handled messy user inputs, conversation history, and fallback error handling.</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Business Development Specialist Intern</strong> <span style="color: var(--text-light);">| Younity.in, Remote</span>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin: 4px 0;">July 2023 – September 2023</p>
+          <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-left: 20px; margin-top: 6px;">
+            <li>Researched industry trends and competitor activity and conducted SWOT analysis.</li>
+            <li>Identified and qualified prospective B2C clients, then reached out through networking and direct outreach.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-bottom: 20px;">
+        <h4 style="color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 8px;">Awards &amp; Certificates</h4>
+        <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-left: 20px;">
+          <li>Exceptional Hiring — Certificate</li>
+          <li>Emerging Professional — Younity.in</li>
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 28px;">
+        <button class="btn-pill-primary" onclick="printResume()">
+          <i class="fa-solid fa-print"></i> Print / Save as PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="close-project-modal" aria-label="Close project details">&times;</button>
+      <div id="project-modal-content">
+        <!-- Content injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAVE FEEDBACK MODAL -->
+  <div class="modal-overlay" id="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+    <div class="modal-container" style="max-width: 540px;">
+      <button class="modal-close-btn" id="close-feedback-modal" aria-label="Close feedback dialog">&times;</button>
+      <h3 id="feedback-title" style="font-size: 1.5rem; margin-bottom: 8px;">Leave Professional Feedback</h3>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px;">Share a public testimonial or
+        endorsement for Farad.</p>
+
+      <form id="feedback-form" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="form-group">
+          <label for="fb-name">YOUR NAME *</label>
+          <input type="text" id="fb-name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+        </div>
+        <div class="form-group">
+          <label for="fb-role">YOUR ROLE & COMPANY *</label>
+          <input type="text" id="fb-role" class="form-control" placeholder="e.g. Senior Tech Lead at CloudCorp"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="fb-comment">RECOMMENDATION / FEEDBACK *</label>
+          <textarea id="fb-comment" class="form-control" placeholder="Write your comments..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send-message">Post Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check" style="color: #38bdf8;"></i>
+    <span id="toast-text">Message sent successfully!</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="script.js"></script>
+</body>
+
+</html>
