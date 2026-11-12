@@ -1899,14 +1899,14 @@ textarea.form-control {
 }
 
 .visitor-game-heading h3 {
-  color: #ffffff;
+  color: var(--text-heading);
   font-size: 1.5rem;
   margin-bottom: 6px;
 }
 
 .visitor-game-heading p,
 .game-status {
-  color: var(--footer-muted);
+  color: var(--text-muted);
 }
 
 .visitor-game-scores {
@@ -1918,11 +1918,11 @@ textarea.form-control {
 }
 
 .visitor-game-scores p {
-  color: var(--footer-muted);
+  color: var(--text-muted);
 }
 
 .visitor-game-scores strong {
-  color: #ffffff;
+  color: var(--text-heading);
   margin-left: 4px;
 }
 
