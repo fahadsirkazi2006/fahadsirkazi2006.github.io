@@ -616,15 +616,83 @@ function initStarCatchGame() {
 
   if (!arena || !target || !startButton || !scoreDisplay || !timeDisplay || !highScoreDisplay || !status) return;
 
-  const highScoreKey = 'portfolio-star-game-high-score';
+  const supabaseUrl = 'https://YOUR_PROJECT_ID.supabase.co';
+  const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+  const supabaseConfigured = supabaseUrl.startsWith('https://')
+    && !supabaseUrl.includes('YOUR_')
+    && supabaseAnonKey.length > 0
+    && !supabaseAnonKey.includes('YOUR_');
+  const supabaseHeaders = {
+    apikey: supabaseAnonKey,
+    Authorization: `Bearer ${supabaseAnonKey}`
+  };
   let score = 0;
-  let highScore = Number(localStorage.getItem(highScoreKey)) || 0;
+  let highScore = null;
   let timeRemaining = 20;
-  let previousHighScore = highScore;
+  let previousHighScore = null;
   let isPlaying = false;
   let timerId;
 
-  highScoreDisplay.textContent = String(highScore);
+  highScoreDisplay.textContent = supabaseConfigured ? '...' : '—';
+
+  async function loadHighScore() {
+    const response = await fetch(
+      `${supabaseUrl}/rest/v1/star_game_scores?id=eq.1&select=score`,
+      { headers: supabaseHeaders }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Could not load shared high score (HTTP ${response.status})`);
+    }
+
+    const rows = await response.json();
+    if (!Array.isArray(rows) || rows.length !== 1) {
+      throw new Error('Supabase returned an invalid shared high score');
+    }
+
+    const loadedScore = Number(rows[0].score);
+    if (!Number.isSafeInteger(loadedScore) || loadedScore < 0) {
+      throw new Error('Supabase returned an invalid shared high score');
+    }
+
+    return loadedScore;
+  }
+
+  async function submitScore(finalScore) {
+    const response = await fetch(`${supabaseUrl}/rest/v1/rpc/submit_star_game_score`, {
+      method: 'POST',
+      headers: { ...supabaseHeaders, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ submitted_score: finalScore })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Could not save shared high score (HTTP ${response.status})`);
+    }
+
+    const savedScore = Number(await response.json());
+    if (!Number.isSafeInteger(savedScore) || savedScore < 0) {
+      throw new Error('Supabase returned an invalid shared high score');
+    }
+
+    return savedScore;
+  }
+
+  const highScoreLoad = supabaseConfigured
+    ? loadHighScore()
+        .then((loadedScore) => {
+          highScore = loadedScore;
+          highScoreDisplay.textContent = String(highScore);
+        })
+        .catch((error) => {
+          console.error('Shared game high score could not be loaded:', error);
+          highScoreDisplay.textContent = '—';
+          status.textContent = 'The shared high score could not be loaded. You can still play.';
+        })
+    : Promise.resolve();
+
+  if (!supabaseConfigured) {
+    status.textContent = 'The shared high score is not configured. You can still play.';
+  }
 
   function moveTarget() {
     const maxX = Math.max(0, arena.clientWidth - target.offsetWidth);
@@ -633,16 +701,32 @@ function initStarCatchGame() {
     target.style.top = `${Math.round(Math.random() * maxY)}px`;
   }
 
-  function finishGame() {
+  async function finishGame() {
     isPlaying = false;
     clearInterval(timerId);
     target.hidden = true;
     startButton.disabled = false;
     startButton.textContent = 'Play Again';
     startButton.focus();
-    status.textContent = score > previousHighScore
-      ? `New personal best: ${score}! Great catching!`
-      : `Time's up! You caught ${score} ${score === 1 ? 'star' : 'stars'}.`;
+    const resultMessage = `Time's up! You caught ${score} ${score === 1 ? 'star' : 'stars'}.`;
+    status.textContent = resultMessage;
+
+    if (!supabaseConfigured) return;
+
+    status.textContent = `${resultMessage} Updating the overall best...`;
+    try {
+      await highScoreLoad;
+      const previousOverallBest = previousHighScore === null ? highScore : previousHighScore;
+      const savedScore = await submitScore(score);
+      highScore = highScore === null ? savedScore : Math.max(highScore, savedScore);
+      highScoreDisplay.textContent = String(highScore);
+      status.textContent = score > previousOverallBest && score === savedScore
+        ? `New overall best: ${score}! Great catching!`
+        : resultMessage;
+    } catch (error) {
+      console.error('Shared game high score could not be saved:', error);
+      status.textContent = `${resultMessage} The overall best could not be updated.`;
+    }
   }
 
   startButton.addEventListener('click', () => {
@@ -673,14 +757,6 @@ function initStarCatchGame() {
 
     score += 1;
     scoreDisplay.textContent = String(score);
-
-    if (score > highScore) {
-      highScore = score;
-      localStorage.setItem(highScoreKey, String(highScore));
-      highScoreDisplay.textContent = String(highScore);
-      status.textContent = 'New personal best! Keep going!';
-    }
-
     moveTarget();
   });
 }
