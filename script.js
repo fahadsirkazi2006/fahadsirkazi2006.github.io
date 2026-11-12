@@ -616,16 +616,13 @@ function initStarCatchGame() {
 
   if (!arena || !target || !startButton || !scoreDisplay || !timeDisplay || !highScoreDisplay || !status) return;
 
-  const supabaseUrl = 'https://YOUR_PROJECT_ID.supabase.co';
-  const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+  const supabaseUrl = 'https://hkqtnqbexslbqklmcaxx.supabase.co';
+  const supabaseAnonKey = 'sb_publishable_O1U0ax-Aj9dN0K8OcQuMdQ_t14TDu7L';
   const supabaseConfigured = supabaseUrl.startsWith('https://')
     && !supabaseUrl.includes('YOUR_')
     && supabaseAnonKey.length > 0
     && !supabaseAnonKey.includes('YOUR_');
-  const supabaseHeaders = {
-    apikey: supabaseAnonKey,
-    Authorization: `Bearer ${supabaseAnonKey}`
-  };
+  const supabaseHeaders = { apikey: supabaseAnonKey };
   let score = 0;
   let highScore = null;
   let timeRemaining = 20;
