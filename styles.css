@@ -1264,6 +1264,35 @@ section {
   background-color: #0b111a;
 }
 
+.earthscope-project-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: radial-gradient(circle at 50% 40%, #12613f, #071b1c 72%);
+  color: #fff;
+  text-align: center;
+}
+
+.earthscope-project-visual i {
+  color: #86efac;
+  font-size: 2rem;
+}
+
+.earthscope-project-visual strong {
+  font-size: 1.65rem;
+  letter-spacing: 0.14em;
+}
+
+.earthscope-project-visual span {
+  color: #a7f3d0;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
 .project-media-wrapper img {
   width: 100%;
   height: 100%;
@@ -1319,6 +1348,38 @@ section {
   line-height: 1.65;
   margin-bottom: 22px;
   flex-grow: 1;
+}
+
+.project-role {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent-blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background-color: var(--bg-tag);
+}
+
+.project-role-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-role strong {
+  color: var(--accent-blue);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.project-contributions {
+  color: var(--text-main);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .project-tags {
