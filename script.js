@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollTop();
 });
 
+const SUPABASE_URL = 'https://hkqtnqbexslbqklmcaxx.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_O1U0ax-Aj9dN0K8OcQuMdQ_t14TDu7L';
+const SUPABASE_HEADERS = { apikey: SUPABASE_ANON_KEY };
+
 /* ==========================================================================
    THEME TOGGLE SYSTEM (Standard Compliant)
    ========================================================================== */
@@ -475,18 +479,38 @@ function initFeedbackSystem() {
   const form = document.getElementById('feedback-form');
   const container = document.getElementById('comments-container');
   const modal = document.getElementById('feedback-modal');
+  const supabaseConfigured = SUPABASE_URL.startsWith('https://')
+    && SUPABASE_ANON_KEY.length > 0;
 
-  // Load custom feedback from localStorage
-  const savedFeedback = JSON.parse(localStorage.getItem('portfolio-comments') || '[]');
-  const visibleFeedback = savedFeedback.filter(item => String(item.name || '').trim() !== '123');
-  if (visibleFeedback.length !== savedFeedback.length) {
-    savedFeedback.splice(0, savedFeedback.length, ...visibleFeedback);
-    localStorage.setItem('portfolio-comments', JSON.stringify(savedFeedback));
+  async function loadFeedback() {
+    if (!supabaseConfigured || !container) return;
+
+    try {
+      const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/portfolio_feedback?select=name,role,comment,created_at&order=created_at.desc`,
+        { headers: SUPABASE_HEADERS }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Could not load feedback (HTTP ${response.status})`);
+      }
+
+      const feedback = await response.json();
+      if (!Array.isArray(feedback)) {
+        throw new Error('Supabase returned an invalid feedback response');
+      }
+
+      feedback.forEach(item => addCommentCard(item, false));
+    } catch (error) {
+      console.error('Feedback loading failed:', error);
+      showToast('Feedback could not be loaded. Please try again later.');
+    }
   }
-  savedFeedback.forEach(item => addCommentCard(item, false));
+
+  loadFeedback();
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('fb-name').value.trim();
@@ -495,19 +519,45 @@ function initFeedbackSystem() {
 
       if (!name || !role || !comment) return;
 
-      const newFeedback = { name, role, comment, date: new Date().toLocaleDateString() };
-      
-      // Save
-      savedFeedback.push(newFeedback);
-      localStorage.setItem('portfolio-comments', JSON.stringify(savedFeedback));
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Posting...';
+      }
 
-      // Append to UI
-      addCommentCard(newFeedback, true);
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/portfolio_feedback`, {
+          method: 'POST',
+          headers: {
+            ...SUPABASE_HEADERS,
+            'Content-Type': 'application/json',
+            Prefer: 'return=representation'
+          },
+          body: JSON.stringify({ name, role, comment })
+        });
 
-      // Reset & Close
-      form.reset();
-      closeModal(modal);
-      showToast('Thank you! Your feedback has been posted.');
+        if (!response.ok) {
+          throw new Error(`Could not post feedback (HTTP ${response.status})`);
+        }
+
+        const createdFeedback = await response.json();
+        if (!Array.isArray(createdFeedback) || createdFeedback.length !== 1) {
+          throw new Error('Supabase returned an invalid created feedback response');
+        }
+
+        addCommentCard(createdFeedback[0], true);
+        form.reset();
+        closeModal(modal);
+        showToast('Thank you! Your feedback has been posted.');
+      } catch (error) {
+        console.error('Feedback submission failed:', error);
+        showToast('Your feedback could not be posted. Please try again.');
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Post Feedback';
+        }
+      }
     });
   }
 
@@ -518,16 +568,29 @@ function initFeedbackSystem() {
 
     const initial = item.name.charAt(0).toUpperCase();
 
-    card.innerHTML = `
-      <p class="comment-quote-text">"${item.comment}"</p>
-      <div class="comment-author-info">
-        <div class="author-avatar">${initial}</div>
-        <div class="author-details">
-          <h4>${item.name}</h4>
-          <p>${item.role}</p>
-        </div>
-      </div>
-    `;
+    const quote = document.createElement('p');
+    quote.className = 'comment-quote-text';
+    quote.textContent = `"${item.comment}"`;
+
+    const authorInfo = document.createElement('div');
+    authorInfo.className = 'comment-author-info';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'author-avatar';
+    avatar.textContent = initial;
+
+    const authorDetails = document.createElement('div');
+    authorDetails.className = 'author-details';
+
+    const authorName = document.createElement('h4');
+    authorName.textContent = item.name;
+
+    const authorRole = document.createElement('p');
+    authorRole.textContent = item.role;
+
+    authorDetails.append(authorName, authorRole);
+    authorInfo.append(avatar, authorDetails);
+    card.append(quote, authorInfo);
 
     if (container) {
       container.prepend(card);
@@ -616,13 +679,13 @@ function initStarCatchGame() {
 
   if (!arena || !target || !startButton || !scoreDisplay || !timeDisplay || !highScoreDisplay || !status) return;
 
-  const supabaseUrl = 'https://hkqtnqbexslbqklmcaxx.supabase.co';
-  const supabaseAnonKey = 'sb_publishable_O1U0ax-Aj9dN0K8OcQuMdQ_t14TDu7L';
+  const supabaseUrl = SUPABASE_URL;
+  const supabaseAnonKey = SUPABASE_ANON_KEY;
   const supabaseConfigured = supabaseUrl.startsWith('https://')
     && !supabaseUrl.includes('YOUR_')
     && supabaseAnonKey.length > 0
     && !supabaseAnonKey.includes('YOUR_');
-  const supabaseHeaders = { apikey: supabaseAnonKey };
+  const supabaseHeaders = SUPABASE_HEADERS;
   let score = 0;
   let highScore = null;
   let timeRemaining = 20;
