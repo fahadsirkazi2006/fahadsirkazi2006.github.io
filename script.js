@@ -644,9 +644,17 @@ function initContactForm() {
           headers: { Accept: 'application/json' },
           body: new FormData(form)
         });
-        const result = await response.json();
+        const responseText = await response.text();
+        let result;
 
-        if (!response.ok || result.success !== 'true') {
+        try {
+          result = JSON.parse(responseText);
+        } catch {
+          throw new Error(`Form service returned an unexpected response (HTTP ${response.status})`);
+        }
+
+        const submissionSucceeded = result.success === true || result.success === 'true';
+        if (!response.ok || !submissionSucceeded) {
           throw new Error(result.message || `Form service returned HTTP ${response.status}`);
         }
 
@@ -654,7 +662,12 @@ function initContactForm() {
         showToast('Message sent successfully. Thank you for getting in touch!');
       } catch (error) {
         console.error('Contact form submission failed:', error);
-        showToast('Your message could not be sent. Please try again or email fahadsirkazi109@gmail.com.');
+        const errorMessage = error instanceof Error ? error.message : 'Unknown form submission error';
+        const activationRequired = errorMessage.toLowerCase().includes('activate')
+          || errorMessage.toLowerCase().includes('confirm');
+        showToast(activationRequired
+          ? 'Please activate the contact form through the confirmation email sent by FormSubmit.'
+          : 'Your message could not be sent. Please try again or email fahadsirkazi109@gmail.com.');
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
